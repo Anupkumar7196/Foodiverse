@@ -1,0 +1,29 @@
+{
+  "name": "react-02",
+  "version": "1.0.0",
+  "description": "This is react by Anup Kumar",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anupkumar7196/React.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Anup kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Anupkumar7196/React/issues"
+  },
+  "homepage": "https://github.com/Anupkumar7196/React#readme",
+  "devDependencies": {
+    "parcel": "^2.15.2"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  }
+ 
+}
