@@ -1,12 +1,76 @@
-#heading {
-    color:red;
+.header{
+    display: flex;
+    justify-content: space-between;
+    border: 0.5px solid gray;
 }
-.heading{
-    color: blue;
+.logo{
+    width: 50px;
+
 }
-#greet{
-    color: yellow;
+
+.nav-items, ul{
+    display: flex;
+    list-style-type: none;
+    font-size: 10px;
 }
-#intro{
-    color: pink;
+.nav-items, ul, li{
+    padding: 10px;
+    margin: 10px;
+    margin-top: -5px;
+    margin-right: -5px;
+    
 }
+.res-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.res-card{
+    /* padding: 5px;
+    width: 100px;
+    height: 200px;
+    border: 1px solid black; */
+    margin: 5px;
+    width: 100px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  font-family: sans-serif;
+  transition: transform 0.3s ease;
+}
+.res-card:hover{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px) scale(1.05) rotate(1deg);
+    /* transform: translate3d(50px, 0, 20px); */
+    /* transform: perspective(800px); */
+    /* transform: matrix(1, 0.5, -0.5, 1, 0, 0); */
+    /* transform: skew(20deg, 10deg); */
+    /* transform: scale(0.95); */
+    cursor: pointer;
+}
+.search{
+    padding: 10px;
+}
+
+.res-logo{
+    width: 100%;
+  height: 100px; /* or auto for natural height */
+  object-fit: cover; /* contain, cover, fill, scale-down */
+  display: block;
+}
+.res-card h5,
+.res-card p {
+  font-size: 5px; /* smaller text */
+  line-height: 1px; /* less vertical spacing */
+  margin: 2px 0; /* minimal spacing */
+  line-height: 1.2;
+  white-space: normal;      /* allow wrapping */
+  overflow: hidden;         /* hide overflow if needed */
+  text-overflow: ellipsis;
+}
+h5,p{
+    padding: 5px;
+    margin-top: 0px;
+}
+
+
