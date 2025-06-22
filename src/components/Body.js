@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, {withPromotedLabel} from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import {Link} from "react-router-dom";
@@ -7,6 +7,11 @@ const Body = () => {
     const [listOfRestaurants, setListOfRestaurant] = useState([]);
     const [filteredRestaurant, setFilteredRestaurant] = useState("");
     const [searchText, setSearchText] = useState("");
+
+    const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
+
+    //Whenever state variables update, react triggers a reconciliation cycle
+    // console.log("Body Rendered", listOfRestaurants);
     
     useEffect(() => {
         fetchData();        
@@ -19,7 +24,7 @@ const Body = () => {
         );
         const json = await data.json();
 
-        console.log(json);
+        // console.log(json);
         //Optional Chaining
         setListOfRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         setFilteredRestaurant(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
@@ -49,14 +54,14 @@ const Body = () => {
                 <div className="m-4 p-4">
                     <input 
                         type="test"
-                        className="border border-solid border-black"
+                        className="border-[1px] border-gray-300 rounded-md"
                         placeholder="Search Restaurant"
                         value={searchText}
                         onChange={(e) => {
                             setSearchText(e.target.value);
                         }}
                     />
-                    <button className="px-4 py-1 bg-green-100 m-4 rounded-lg"
+                    <button className="px-4 py-1 bg-blue-300 m-4 rounded-lg cursor-pointer"
                         onClick={ (e)=>{
                             console.log(searchText);
 
@@ -71,7 +76,7 @@ const Body = () => {
                 </div>
                 
                 <div className="m-4 p-4 flex items-center">
-                <button className="px-4 py-1  bg-blue-300 rounded-lg" onClick={()=>{
+                <button className="px-4 py-1  bg-blue-300 rounded-lg cursor-pointer" onClick={()=>{
                     const filteredList = listOfRestaurants.filter((res)=>res.info.avgRating > 4);
                     setListOfRestaurant(filteredList);
                 }}
@@ -83,7 +88,14 @@ const Body = () => {
             <div className="flex flex-wrap ml-5">
                 {
                     filteredRestaurant.map((restaurant)=>(
-                        <Link key={restaurant.info.id} to={"/restaurants/" + restaurant.info.id} > <RestaurantCard  resData={restaurant}/></Link>
+                        <Link key={restaurant.info.id} to={"/restaurants/" + restaurant.info.id} > 
+
+                        {restaurant.info.promoted ? (
+                            <RestaurantCardPromoted resData = {restaurant} />
+                        ) : (
+                            <RestaurantCard  resData={restaurant}/>
+                        )}
+                        </Link>
                     ))
                 }
             </div>
