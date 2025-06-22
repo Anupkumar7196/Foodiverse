@@ -7,9 +7,11 @@ const RestaurantMenu = () => {
 
     const { resId } = useParams();
 
+    const dummy = "dummy Data";
+
     const resInfo = useRestaurantMenu(resId);
 
-    const [showIndex, setShowIndex] = useState(null);
+    const [showIndex, setShowIndex] = useState(0);
 
     
     if (resInfo === null) return <Shimmer />
@@ -19,7 +21,7 @@ const RestaurantMenu = () => {
     const {itemCards} = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[5]?.card?.card;
     // console.log(itemCards);
     
-    console.log("render");
+    // console.log("render");
     
     const categories = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
         (c)=> c.card?.card?.["@type"] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
@@ -42,6 +44,7 @@ const RestaurantMenu = () => {
                 index = {index}
                 showItems = {index === showIndex}
                 setShowIndex={(clickedIndex) => setShowIndex((prevIndex)=> prevIndex === clickedIndex ? null : clickedIndex)}
+                dummy = {dummy}
                 />
             ))}
         </div>

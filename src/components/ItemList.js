@@ -1,47 +1,9 @@
 import { CDN_IMG } from "../utils/constants";
 
-// import { CDN_ITML } from "../utils/constants";
-const ItemList = ({items}) => {
-    // console.log(items);
+const ItemList = ({items, dummy}) => {
+    console.log(dummy);
     return(
-        // <div>
-        //     {items.map((item) => (<div key={item.card.info.id} className="p-2 m-2 border-gray-200 border-b-2">
-        //         <div>
-        //             <span>{item.card.info.name} </span>
-        //             <span>Rs: {item.card.info.price} </span>
-        //         </div>
-        //         <p>{item.card.info.description}</p>
-        //     </div>
-        // ))}
-        // </div>
-        
-        // <div className="grid gap-2 p-4">
-        //     {items.map((item) => (
-        //      <div
-        //          key={item.card.info.id}
-        //           className="p-2 m-2 border-b-2 border-gray-200   hover:shadow-md transition-shadow bg-white text-left"
-        //         >
-                    
-        //         <div className="py-2 w-auto">
-        //             <h3 className="text-[14px] text-gray-800">
-        //              {item.card.info.name}
-        //             </h3>
-        //             <span className=" text-[12px] text-green-600 font-medium">
-        //             ₹{item.card.info.price ? item.card.info.price / 100 : item.card.info.defaultPrice / 100}
-        //             </span>
-        //             <p className="text-[10px] text-green-500 font-bold">
-        //             ⭐{item.card.info.ratings.aggregatedRating.rating}
-        //             </p>
-        //             <div className="flex">
-        //             <p className="p-2 text-[10px] text-gray-600">{item.card.info.description}</p>
-        //             <img src={CDN_IMG + item.card.info.imageId} className="w-20 h-auto rounded-lg"/>
-        //             </div>
-        //         </div>
-                
-        //         </div>
-        //      ))}
-        // </div>
-
+    
         <div className="grid gap-2 p-4">
             {items.map((item) => (
             <div

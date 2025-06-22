@@ -1,7 +1,7 @@
 
 import ItemList from "./ItemList";
 
-const RestaurantCategory = ({data,index, showItems, setShowIndex}) =>{
+const RestaurantCategory = ({data,index, showItems, setShowIndex, dummy}) =>{
     // console.log(data);
     const handleClick = () => {
         setShowIndex(index);
@@ -17,7 +17,7 @@ const RestaurantCategory = ({data,index, showItems, setShowIndex}) =>{
                     <span className="text-lg">{showItems ? "⬆️" : "⬇️"}</span>
                 </div>
                 
-                {showItems && <ItemList items={data.itemCards}/>}
+                {showItems && <ItemList items={data.itemCards} dummy={dummy}/>}
             </div> 
         </div>
     )
