@@ -58,7 +58,7 @@ const RestaurantCard = (props) => {
   } = resData?.info;
 
   return (
-    <div className="bg-transparent  mx-2 my-4  w-[190px] h-[250px]  transition duration-300 ease-in-out hover:scale-95 hover:bg-transparent-100 cursor-pointer">
+    <div className="bg-transparent  mx-2 my-4  w-[190px] h-[250px]  transition duration-300 ease-in-out hover:scale-95 hover:bg-transparent-100 items-center cursor-pointer">
       {/* Image with discount tag */}
       <div className="relative">
         <img
