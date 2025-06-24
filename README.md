@@ -82,3 +82,5 @@
 -  Configure Babel
 - Configure Parcel Config file to disable default babel transpilation
 - Jest configuration
+- Jest - npx jest --init
+- Installed Jsdom library
