@@ -74,3 +74,11 @@
 - Unit Testing
 - Integration Testing
 - End to End Testing - a2e testing
+
+# Setting up Testing in our app
+- Install React Testing Library
+- Installed jest
+- Installed babel depenedencies
+-  Configure Babel
+- Configure Parcel Config file to disable default babel transpilation
+- Jest configuration
