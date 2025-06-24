@@ -6,7 +6,8 @@
     "start": "parcel index.html",
     "build": "parcel build index.html",
     "test": "jest",
-    "autopush": "git add . && git commit -m \"Auto-commit\" && git push"
+    "autopush": "git add . && git commit -m \"Auto-commit\" && git push",
+    "text": "echo Hello from custom text script"
   },
   "repository": {
     "type": "git",
