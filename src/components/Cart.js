@@ -27,6 +27,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import ItemList from "./ItemList";
 import { clearCart } from "../utils/cartSlice";
+import {Link} from "react-router-dom";
 
 const Cart = () => {
     const cartItems = useSelector((store) => store.cart.items);
@@ -113,9 +114,11 @@ const Cart = () => {
                         </p>
                         
                         {/* Call to Action Button */}
+                        <Link to="/">
                         <button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 shadow-lg uppercase tracking-wide cursor-pointer">
                             See Restaurants Near You
                         </button>
+                        </Link>
                     </div>
                 ) : (
                     <ItemList items={cartItems} />

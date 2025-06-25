@@ -88,7 +88,7 @@ const Contact = () => {
                                     </div>
                                     <div>
                                         <h3 className="font-semibold text-gray-800">Phone Support</h3>
-                                        <p className="text-gray-600">+91 80-67466729</p>
+                                        <p className="text-gray-600">+91 7543816917</p>
                                         <p className="text-sm text-gray-500">Available 24/7</p>
                                     </div>
                                 </div>
@@ -103,7 +103,7 @@ const Contact = () => {
                                     </div>
                                     <div>
                                         <h3 className="font-semibold text-gray-800">Email Support</h3>
-                                        <p className="text-gray-600">support@swiggy.com</p>
+                                        <p className="text-gray-600">support@foodiverse.com</p>
                                         <p className="text-sm text-gray-500">We'll respond within 24 hours</p>
                                     </div>
                                 </div>
@@ -119,8 +119,8 @@ const Contact = () => {
                                     </div>
                                     <div>
                                         <h3 className="font-semibold text-gray-800">Visit Us</h3>
-                                        <p className="text-gray-600">Bundl Technologies Pvt Ltd</p>
-                                        <p className="text-sm text-gray-500">Bangalore, India</p>
+                                        <p className="text-gray-600">foodiverse Pvt Ltd</p>
+                                        <p className="text-sm text-gray-500">New Delhi, India</p>
                                     </div>
                                 </div>
                             </div>

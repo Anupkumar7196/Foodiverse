@@ -171,7 +171,7 @@ const Body = () => {
     ) : (
         <div className="body flex flex-col items-center min-h-screen">
             
-            <div className="flex flex-wrap justify-center items-center w-full max-w-6xl mx-auto px-4 py-4">
+            {/* <div className="flex flex-wrap justify-center items-center w-full max-w-6xl mx-auto px-4 py-4">
                 <div className="m-2 p-2">
                     <input 
                         type="test"
@@ -211,7 +211,55 @@ const Body = () => {
                     value={loggedInUser}
                     onChange={(e) => setUserName(e.target.value)}/>
                 </div>
+            </div> */}
+
+        <div className="flex flex-wrap justify-center   items-center w-full max-w-6xl mx-auto px-4 py-4">
+            {/* Search Input & Button */}
+            <div className="m-2 p-2 flex flex-col sm:flex-row items-center gap-3">
+           <input 
+            type="text"
+            className="border-[1px] border-gray-300 rounded-md px-4 py-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-300 transition"
+            placeholder="Search Restaurant"
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}
+            />
+             <button 
+            className="px-5 py-2 bg-blue-500 text-white rounded-md shadow-md hover:bg-blue-600 transition-all duration-200 cursor-pointer"
+            onClick={() => {
+                const filteredRestaurant = listOfRestaurants.filter(
+                    (res) => res.info.name.toLowerCase().includes(searchText.toLowerCase())
+                );
+                setFilteredRestaurant(filteredRestaurant);
+            }}
+             >
+            Search
+            </button>
             </div>
+
+            {/* Top Rated Button */}
+            <div className="m-2 p-2 flex items-center">
+           <button 
+            className="px-5 py-2 bg-green-500 text-white rounded-md shadow-md hover:bg-green-600 transition-all duration-200 cursor-pointer"
+            onClick={() => {
+                const filteredList = listOfRestaurants.filter((res) => res.info.avgRating > 4);
+                setListOfRestaurant(filteredList);
+            }}
+             >
+            Top Rated Restaurant
+            </button>
+            </div>
+
+            {/* Username Input */}
+            <div className="m-2 p-2 flex items-center gap-2">
+             <label className="font-medium text-gray-700">UserName:</label>
+            <input 
+            className="border border-gray-300 px-3 py-2 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-orange-300 transition"
+            value={loggedInUser}
+            onChange={(e) => setUserName(e.target.value)}
+            />
+            </div>
+        </div>
+
             
             <div className="flex flex-wrap justify-center gap-6 w-full max-w-7xl mx-auto px-4">
                 {
